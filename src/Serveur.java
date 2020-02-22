@@ -39,6 +39,8 @@ public class Serveur {
 
                     O.writeObject("Serveur a resux un persone avex success : " + personRecu);
                     break;
+                case "O":
+                    O.writeObject("Serveur pri pour recher : ");
             }
         }
 
