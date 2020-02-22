@@ -7,9 +7,10 @@ import java.util.Scanner;
 public class Client {
     static String serverName = "localhost";
     static int serverPort = 9999;
-    public static void main(String[] args) throws Exception{
+
+    public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        Socket socket = new Socket(serverName,serverPort);
+        Socket socket = new Socket(serverName, serverPort);
         System.out.println("Socket client : " + socket);
 
         ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
@@ -30,16 +31,16 @@ public class Client {
 
 
                     System.out.print("entre le nom : ");
-                    String nome = scanner.nextLine().trim();
-                    System.out.print("entre le nom : ");
+                    String nom = scanner.nextLine().trim();
+                    System.out.print("entre le prenom : ");
                     String prenom = scanner.nextLine().trim();
                     System.out.print("entre le tel");
-                    String tel  = scanner.nextLine().trim();
+                    String tel = scanner.nextLine().trim();
                     System.out.print("entre le nom : ");
                     String pass = scanner.nextLine().trim();
 
 
-                    Person Person = new Person(nome,prenom,tel,pass);
+                    Person Person = new Person(nom, prenom, tel, pass);
 
 
                     out.writeObject(Person);
