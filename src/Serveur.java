@@ -9,9 +9,9 @@ public class Serveur {
     static int port = 9999;
     public static void main(String[] args) throws Exception {
         ServerSocket s = new ServerSocket(port);
-        System.out.println("\u001B[31mServer: \u001B[0mSocket serveur : " + s);
+        System.out.println("Socket serveur : " + s);
         Socket soc = s.accept();
-        System.out.println("\u001B[31mServer: \u001B[0mServeur accept connextion : " + soc);
+        System.out.println("Serveur accept connextion : " + soc);
 
         ObjectOutputStream O = new ObjectOutputStream(soc.getOutputStream());
         ObjectInputStream I  = new ObjectInputStream(soc.getInputStream());
