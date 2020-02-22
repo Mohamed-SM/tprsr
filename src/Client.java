@@ -49,6 +49,11 @@ public class Client {
                     System.out.println("msg de servuer : " + msg);
 
                     break;
+
+                case "R":
+                    out.writeObject(choix); // naba3to choix lel server
+                    msg = (String) in.readObject();
+                    System.out.println("msg de servuer : " + msg);
             }
         }
 
