@@ -31,10 +31,15 @@ public class Client {
 
                     System.out.print("entre le nom : ");
                     String nome = scanner.nextLine().trim();
+                    System.out.print("entre le nom : ");
+                    String prenom = scanner.nextLine().trim();
                     System.out.print("entre le tel");
                     String tel  = scanner.nextLine().trim();
+                    System.out.print("entre le nom : ");
+                    String pass = scanner.nextLine().trim();
 
-                    Person Person = new Person(nome,nome,tel,tel);
+
+                    Person Person = new Person(nome,prenom,tel,pass);
 
 
                     out.writeObject(Person);
