@@ -37,8 +37,10 @@ public class Serveur {
 
                     persons.add(personRecu);
 
-                    O.writeObject("Serveur a resux un persone avex success : " + personRecu);
+                    O.writeObject("Serveur a resu un persone avec success : " + personRecu);
                     break;
+
+
                 case "O":
                     O.writeObject("Serveur pri pour recher : ");
             }

@@ -21,7 +21,7 @@ public class Client {
         String msg;
 
         while (!choix.equals("E")) {
-            System.out.println("A: ajouter\nM: modifier\nR: recherche\nE:quitter");
+            System.out.print("A: ajouter\nM: modifier\nR: recherche\nE:quitter\nvoitre choix : ");
             choix = scanner.nextLine().trim().toUpperCase();
             switch (choix) {
                 case "A":
@@ -34,9 +34,9 @@ public class Client {
                     String nom = scanner.nextLine().trim();
                     System.out.print("entre le prenom : ");
                     String prenom = scanner.nextLine().trim();
-                    System.out.print("entre le tel");
+                    System.out.print("entre le tel : ");
                     String tel = scanner.nextLine().trim();
-                    System.out.print("entre le nom : ");
+                    System.out.print("entre le pass : ");
                     String pass = scanner.nextLine().trim();
 
 
@@ -54,6 +54,9 @@ public class Client {
                     out.writeObject(choix); // naba3to choix lel server
                     msg = (String) in.readObject();
                     System.out.println("msg de servuer : " + msg);
+
+                case "E":
+                    out.writeObject(choix);
             }
         }
 
