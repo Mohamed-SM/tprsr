@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f63ad177-19a5-41d8-ae3e-0b3b639f219b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YAtLDwJ44BldYeyNp19puitWhW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="RS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="RS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Serveur" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Serveur" />
+      <module name="RS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Serveur" />
+      <item itemvalue="Application.Client" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Serveur" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f63ad177-19a5-41d8-ae3e-0b3b639f219b" name="Default Changelist" comment="" />
+      <created>1582397168767</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582397168767</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="768" y="276" width="374" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1582401740148">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="768" y="276" width="374" height="560" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1582401740147" />
+    <state x="707" y="34" width="496" height="1044" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582401696461">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="707" y="34" width="496" height="1044" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1582401696461" />
+    <state x="743" y="315" width="424" height="482" key="FileChooserDialogImpl" timestamp="1582397204847">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="743" y="315" width="424" height="482" key="FileChooserDialogImpl/0.34.1920.1046@0.34.1920.1046" timestamp="1582397204847" />
+    <state width="1870" height="524" key="GridCell.Tab.0.bottom" timestamp="1582401939461">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state width="1870" height="524" key="GridCell.Tab.0.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1582401939461" />
+    <state width="1870" height="524" key="GridCell.Tab.0.center" timestamp="1582401939458">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state width="1870" height="524" key="GridCell.Tab.0.center/0.34.1920.1046@0.34.1920.1046" timestamp="1582401939458" />
+    <state width="1870" height="524" key="GridCell.Tab.0.left" timestamp="1582401939456">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state width="1870" height="524" key="GridCell.Tab.0.left/0.34.1920.1046@0.34.1920.1046" timestamp="1582401939456" />
+    <state width="1870" height="524" key="GridCell.Tab.0.right" timestamp="1582401939459">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state width="1870" height="524" key="GridCell.Tab.0.right/0.34.1920.1046@0.34.1920.1046" timestamp="1582401939459" />
+    <state width="498" height="447" key="SwitcherDM" timestamp="1582398133357">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state width="498" height="447" key="SwitcherDM/0.34.1920.1046@0.34.1920.1046" timestamp="1582398133357" />
+    <state x="623" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1582403161087">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="623" y="264" width="672" height="678" key="search.everywhere.popup/0.34.1920.1046@0.34.1920.1046" timestamp="1582403161087" />
+  </component>
+</project>
