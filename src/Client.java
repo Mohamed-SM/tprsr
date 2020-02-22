@@ -24,7 +24,7 @@ public class Client {
             choix = scanner.nextLine().trim().toUpperCase();
             switch (choix) {
                 case "A":
-                    out.writeObject(choix);
+                    out.writeObject(choix); // naba3to choix lel server
                     msg = (String) in.readObject();
                     System.out.println("msg de servuer : " + msg);
 

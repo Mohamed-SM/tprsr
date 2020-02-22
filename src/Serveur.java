@@ -25,14 +25,14 @@ public class Serveur {
         String choix = "";
 
         while (!choix.equals("E")) {
-            choix = (String) I.readObject();
-            System.out.println("choix : " + choix);
+            choix = (String) I.readObject(); //nesta9blo choix men 3and client
+            System.out.println("choix de client : " + choix);
             switch (choix) {
                 case "A":
-                    O.writeObject(new String("Serveur pri pour ajoute un person : "));
+                    O.writeObject("Serveur pri pour ajoute un person : ");
                     Person personRecu = (Person) I.readObject();
                     System.out.println("Serveur recoit : " + personRecu);
-                    O.writeObject(new String("Serveur a resux un persone avex success : " + personRecu));
+                    O.writeObject("Serveur a resux un persone avex success : " + personRecu);
                     break;
             }
         }
