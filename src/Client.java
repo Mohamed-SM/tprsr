@@ -10,7 +10,7 @@ public class Client {
     public static void main(String[] args) throws Exception{
         Scanner scanner = new Scanner(System.in);
         Socket socket = new Socket(serverName,serverPort);
-        System.out.println("\u001B[32mClient: \u001B[0mSocket client : " + socket);
+        System.out.println("Socket client : " + socket);
 
         ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
         ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
