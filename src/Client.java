@@ -20,7 +20,7 @@ public class Client {
         String msg;
 
         while (!choix.equals("E")) {
-            System.out.println("A: ajoute\nM: modifer\nR: recherch\nE:queti");
+            System.out.println("A: ajoute\nM: modifer\nR: recherch\nE:quitter");
             choix = scanner.nextLine().trim().toUpperCase();
             switch (choix) {
                 case "A":
