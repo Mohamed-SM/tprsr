@@ -18,6 +18,10 @@ public class Serveur {
         ObjectInputStream I  = new ObjectInputStream(soc.getInputStream());
 
         ArrayList<Person> persons = new ArrayList<>();
+        persons.add(new Person("Hiba", "Moumne", "066666666", "pass1"));
+        persons.add(new Person("Chimaa", "Moumne", "066666666", "pass1"));
+        persons.add(new Person("Iman", "Moumne", "066666666", "pass1"));
+        persons.add(new Person("Nor", "Moumne", "066666666", "pass1"));
 
         String choix = "";
 
