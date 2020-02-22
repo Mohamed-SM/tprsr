@@ -3,6 +3,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Serveur {
@@ -16,11 +17,7 @@ public class Serveur {
         ObjectOutputStream O = new ObjectOutputStream(soc.getOutputStream());
         ObjectInputStream I  = new ObjectInputStream(soc.getInputStream());
 
-
-        //O.writeObject(personRecu);
-
-        //Fermeture des flux et du socket de service
-
+        ArrayList<Person> persons = new ArrayList<>();
 
         String choix = "";
 
@@ -30,8 +27,12 @@ public class Serveur {
             switch (choix) {
                 case "A":
                     O.writeObject("Serveur pri pour ajoute un person : ");
-                    Person personRecu = (Person) I.readObject();
+
+                    Person personRecu = (Person) I.readObject(); // nesta9blo person jdid
                     System.out.println("Serveur recoit : " + personRecu);
+
+                    persons.add(personRecu);
+
                     O.writeObject("Serveur a resux un persone avex success : " + personRecu);
                     break;
             }

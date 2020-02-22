@@ -40,14 +40,14 @@ public class Client {
                     String pass = scanner.nextLine().trim();
 
 
-                    Person Person = new Person(nom, prenom, tel, pass);
+                    Person Person = new Person(nom, prenom, tel, pass); // person jdid
 
 
-                    out.writeObject(Person);
-                    msg = (String) in.readObject();
+                    out.writeObject(Person); // naba3to person lel server
 
-
+                    msg = (String) in.readObject(); // message de seccess
                     System.out.println("msg de servuer : " + msg);
+
                     break;
             }
         }
