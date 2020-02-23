@@ -20,27 +20,36 @@ public class Client {
         String choix = "";
         String msg;
 
-        while (!choix.equals("E")) {
-            System.out.print("A: ajouter\nM: modifier\nR: recherche\nE:quitter\nvoitre choix : ");
+        String nom;
+        String prenom;
+        String tel;
+        String pass;
+
+        Person Person;
+
+        while (!choix.equals("Q")) {
+            System.out.print("A: ajouter\nM: modifier\nR: recherche\nQ: quitter\nvoitre choix : ");
             choix = scanner.nextLine().trim().toUpperCase();
+            out.writeObject(choix); // naba3to choix lel server
+
+            msg = (String) in.readObject();
+            System.out.println("msg de servuer : " + msg);
+
             switch (choix) {
                 case "A":
-                    out.writeObject(choix); // naba3to choix lel server
-                    msg = (String) in.readObject();
-                    System.out.println("msg de servuer : " + msg);
-
 
                     System.out.print("entre le nom : ");
-                    String nom = scanner.nextLine().trim();
+                    nom = scanner.nextLine().trim();
                     System.out.print("entre le prenom : ");
-                    String prenom = scanner.nextLine().trim();
+                    prenom = scanner.nextLine().trim();
                     System.out.print("entre le tel : ");
-                    String tel = scanner.nextLine().trim();
+                    tel = scanner.nextLine().trim();
                     System.out.print("entre le pass : ");
-                    String pass = scanner.nextLine().trim();
+                    pass = scanner.nextLine().trim();
 
 
-                    Person Person = new Person(nom, prenom, tel, pass); // person jdid
+                    // person jdid
+                    Person = new Person(nom, prenom, tel, pass);
 
 
                     out.writeObject(Person); // naba3to person lel server
@@ -51,12 +60,53 @@ public class Client {
                     break;
 
                 case "R":
-                    out.writeObject(choix); // naba3to choix lel server
+                    System.out.print("taper le nom que vous cherch : ");
+                    String name = scanner.nextLine().trim();
+
+                    out.writeObject(name);
+
                     msg = (String) in.readObject();
                     System.out.println("msg de servuer : " + msg);
 
-                case "E":
-                    out.writeObject(choix);
+                    break;
+
+                case "M":
+                    int max = (int) in.readObject();
+                    if (max != 0) {
+                        int index = -1;
+
+                        while (index < 0 || index >= max) {
+                            System.out.print("Entre le index (entre 0 et " + (max - 1) + " inclus) : ");
+                            index = scanner.nextInt();
+                        }
+
+                        out.writeObject(index);
+
+                        msg = (String) in.readObject();
+                        System.out.println("msg de servuer : " + msg);
+                        scanner.nextLine();
+
+
+                        System.out.print("entre le nom : ");
+                        nom = scanner.nextLine().trim();
+                        System.out.print("entre le prenom : ");
+                        prenom = scanner.nextLine().trim();
+                        System.out.print("entre le tel : ");
+                        tel = scanner.nextLine().trim();
+                        System.out.print("entre le pass : ");
+                        pass = scanner.nextLine().trim();
+
+                        //modification de person
+                        Person = new Person(nom, prenom, tel, pass);
+
+
+                        out.writeObject(Person); // naba3to person lel server
+
+                        msg = (String) in.readObject(); // message de seccess
+                        System.out.println("msg de servuer : " + msg);
+
+                    }
+                    break;
             }
         }
 
@@ -64,5 +114,7 @@ public class Client {
         in.close();
         out.close();
         socket.close();
+
+        System.out.println("client fermer!!");
     }
 }
