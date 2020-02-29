@@ -9,6 +9,8 @@ import java.util.Arrays;
 
 public class Serveur {
     static int port = 9999;
+    static ArrayList<Person> persons = new ArrayList<>();
+
 
     public static void main(String[] args) throws Exception {
         ServerSocket s = new ServerSocket(port);
@@ -19,7 +21,6 @@ public class Serveur {
         ObjectOutputStream O = new ObjectOutputStream(soc.getOutputStream());
         ObjectInputStream I = new ObjectInputStream(soc.getInputStream());
 
-        ArrayList<Person> persons = new ArrayList<>();
         persons.add(new Person("Hiba", "Moumne", "066666666", "pass1"));
         persons.add(new Person("Chimaa", "Moumne", "066666666", "pass1"));
         persons.add(new Person("Iman", "Moumne", "066666666", "pass1"));
@@ -62,17 +63,91 @@ public class Serveur {
                     O.writeObject("Serveur pri pour modification : ");
                     O.writeObject(persons.size());
 
-                    int index = (int) I.readObject(); // nesta9blo nome de rechech
+                    nom = (String) I.readObject();
+                    String pass = (String) I.readObject();
 
-                    O.writeObject("Person a modifer : " + persons.get(index));
+                    System.out.println("modifier " + nom + " " + pass);
 
-                    Person person = (Person) I.readObject(); // nesta9blo person jdid
+                    Person person = null;
+                    int j;
+                    for (j = 0; j < persons.size(); j++) {
+                        Person p = persons.get(j);
+                        if (p.getNome().equals(nom) && p.getPass().equals(pass)) {
+                            person = p;
+                            break;
+                        }
+                    }
+
+                    if (person != null) {
+                        O.writeObject("Person a modifer : " + person);
+                    } else {
+                        O.writeObject("Aucun personn a modifier");
+                        break;
+                    }
+
+                    person = (Person) I.readObject(); // nesta9blo person jdid
                     System.out.println("Serveur recoit : " + person);
 
-                    persons.set(index, person);
+                    persons.set(j, person);
 
-                    O.writeObject("Serveur a modifee un persone avec success : index: " + index + "  " + person);
+                    O.writeObject("Serveur a modifee un persone avec success : index: " + j + "  " + person);
 
+                    break;
+
+                case "S":
+                    O.writeObject("Serveur pri pour modification : ");
+                    O.writeObject(persons.size());
+
+                    nom = (String) I.readObject();
+                    pass = (String) I.readObject();
+
+                    System.out.println("modifier " + nom + " " + pass);
+
+                    person = null;
+                    int k;
+                    for (k = 0; k < persons.size(); k++) {
+                        Person p = persons.get(k);
+                        if (p.getNome().equals(nom) && p.getPass().equals(pass)) {
+                            person = p;
+                            break;
+                        }
+                    }
+
+                    if (person != null) {
+                        O.writeObject("Person a modifer : " + person);
+                    } else {
+                        O.writeObject("Aucun personn a supprmier");
+                        break;
+                    }
+
+                    String c = (String) I.readObject(); // nesta9blo person jdid
+
+                    if (c.equals("YES") || c.equals("Y")) {
+                        System.out.println("Serveur recoit : " + c);
+
+                        persons.remove(k);
+
+                        System.out.println(persons);
+
+                        O.writeObject("supprmier");
+                    }
+
+                    else {
+                        O.writeObject("Non supprmier");
+                    }
+
+
+                    break;
+
+                case "P":
+                    O.writeObject("Serveur pri pour envoiyes la list des personnes : ");
+                    O.writeObject(persons.size());
+                    StringBuilder people = new StringBuilder();
+                    for (Person person1 : persons) {
+                        people.append(person1).append("\n");
+                    }
+
+                    O.writeObject(people.toString());
                     break;
 
                 case "Q":

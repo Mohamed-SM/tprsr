@@ -1,6 +1,7 @@
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -28,7 +29,7 @@ public class Client {
         Person Person;
 
         while (!choix.equals("Q")) {
-            System.out.print("A: ajouter\nM: modifier\nR: recherche\nQ: quitter\nvoitre choix : ");
+            System.out.print("A: ajouter\tM: modifier\tR: recherche\tS: supprmier\tP: Afficher Tous\nQ: quitter\nvoitre choix : ");
             choix = scanner.nextLine().trim().toUpperCase();
             out.writeObject(choix); // naba3to choix lel server
 
@@ -73,18 +74,19 @@ public class Client {
                 case "M":
                     int max = (int) in.readObject();
                     if (max != 0) {
-                        int index = -1;
+                        System.out.print("Entre le nom : ");
+                        nom = scanner.nextLine();
+                        System.out.print("Entre le me de pass : ");
+                        pass = scanner.nextLine();
 
-                        while (index < 0 || index >= max) {
-                            System.out.print("Entre le index (entre 0 et " + (max - 1) + " inclus) : ");
-                            index = scanner.nextInt();
-                        }
-
-                        out.writeObject(index);
+                        out.writeObject(nom);
+                        out.writeObject(pass);
 
                         msg = (String) in.readObject();
                         System.out.println("msg de servuer : " + msg);
-                        scanner.nextLine();
+                        if(msg.trim().equals("Aucun personn a modifier")) break;
+
+                        //scanner.nextLine();
 
 
                         System.out.print("entre le nom : ");
@@ -107,6 +109,48 @@ public class Client {
 
                     }
                     break;
+
+                case "S":
+                    max = (int) in.readObject();
+                    if (max != 0) {
+                        System.out.print("Entre le nom : ");
+                        nom = scanner.nextLine();
+                        System.out.print("Entre le me de pass : ");
+                        pass = scanner.nextLine();
+
+                        out.writeObject(nom);
+                        out.writeObject(pass);
+
+                        msg = (String) in.readObject();
+                        System.out.println("msg de servuer : " + msg);
+                        if(msg.trim().equals("Aucun personn a supprmier")) break;
+
+                        //scanner.nextLine();
+
+                        System.out.print("Confimer [Y/N] : ");
+
+                        String c = scanner.nextLine().trim().toUpperCase();
+
+                        out.writeObject(c); // naba3to person lel server
+
+                        msg = (String) in.readObject(); // message de seccess
+                        System.out.println("msg de servuer : " + msg);
+
+                    }
+                    break;
+                case "P":
+                    max = (int) in.readObject();
+
+                    System.out.println("le nombre des personns est: " + max);
+
+                    String people = (String) in.readObject();
+
+                    System.out.println("la list est");
+
+                    System.out.println(people);
+
+                    break;
+
             }
         }
 
