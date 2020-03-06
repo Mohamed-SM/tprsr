@@ -1,15 +1,11 @@
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.lang.reflect.Array;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Serveur {
     static int port = 9999;
     static ArrayList<Person> persons = new ArrayList<>();
+    static int number = 0;
 
 
     public static void main(String[] args) throws Exception {
@@ -24,9 +20,10 @@ public class Serveur {
 
         while (true) {
             Socket soc = s.accept();
+            number++;
             System.out.println("Serveur accept connextion : " + soc);
 
-            ServerThread1 serverThread = new ServerThread1(soc);
+            ServerThread1 serverThread = new ServerThread1(soc, number);
             serverThread.start();
         }
 

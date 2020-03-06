@@ -3,9 +3,11 @@ import java.net.Socket;
 
 class ServerThread1 extends Thread{
     private Socket soc;
+    private int number;
 
-    ServerThread1(Socket soc) {
+    ServerThread1(Socket soc, int number) {
         this.soc = soc;
+        this.number = number;
     }
 
     @Override
@@ -19,13 +21,13 @@ class ServerThread1 extends Thread{
 
             while (!choix.equals("Q")) {
                 choix = (String) I.readObject(); //nesta9blo choix men 3and client
-                System.out.println("choix de client : " + choix);
+                System.out.println("choix de client " + number + "  : " + choix);
                 switch (choix) {
                     case "A":
                         O.writeObject("Serveur pri pour ajoute un person : ");
 
                         Person personRecu = (Person) I.readObject(); // nesta9blo person jdid
-                        System.out.println("Serveur recoit : " + personRecu);
+                        System.out.println("Serveur recoit  " + number + "  : " + personRecu);
 
                         Serveur.persons.add(personRecu);
 
@@ -55,7 +57,7 @@ class ServerThread1 extends Thread{
                         nom = (String) I.readObject();
                         String pass = (String) I.readObject();
 
-                        System.out.println("modifier " + nom + " " + pass);
+                        System.out.println("client  " + number + " modifier :  " + nom + " " + pass);
 
                         Person person = null;
                         int j;
@@ -75,7 +77,7 @@ class ServerThread1 extends Thread{
                         }
 
                         person = (Person) I.readObject(); // nesta9blo person jdid
-                        System.out.println("Serveur recoit : " + person);
+                        System.out.println( "client  " + number + " Serveur recoit : " + person);
 
                         Serveur.persons.set(j, person);
 
@@ -84,13 +86,13 @@ class ServerThread1 extends Thread{
                         break;
 
                     case "S":
-                        O.writeObject("Serveur pri pour modification : ");
+                        O.writeObject("Serveur pri pour supprission : ");
                         O.writeObject(Serveur.persons.size());
 
                         nom = (String) I.readObject();
                         pass = (String) I.readObject();
 
-                        System.out.println("modifier " + nom + " " + pass);
+                        System.out.println("client  " + number + " supprimer " + nom + " " + pass);
 
                         person = null;
                         int k;
@@ -112,7 +114,7 @@ class ServerThread1 extends Thread{
                         String c = (String) I.readObject(); // nesta9blo person jdid
 
                         if (c.equals("YES") || c.equals("Y")) {
-                            System.out.println("Serveur recoit : " + c);
+                            System.out.println("client  " + number + " Serveur recoit : " + c);
 
                             Serveur.persons.remove(k);
 
